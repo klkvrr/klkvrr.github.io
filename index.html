@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="sv">
 <head>
 <meta charset="UTF-8" />
-<title>Голосовые напоминания</title>
+<title>Röstpåminnelser</title>
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -17,8 +17,9 @@
   }
   #phrase {
     font-size: 1.5em;
-    color: #007acc;
+    color: red;
     margin: 20px;
+    letter-spacing: 1px;
   }
   .slider-container {
     margin: 20px auto;
@@ -37,27 +38,25 @@
 </style>
 </head>
 <body>
-<h1>Голосовые напоминания</h1>
+<h1>Röstpåminnelser</h1>
 
-<div>Следующая фраза через:</div>
+<div>Nästa fras om:</div>
 <div id="countdown">...</div>
 <div id="phrase"></div>
 
 <div class="slider-container">
-  <div class="slider-label">Скорость (rate): 
+  <div class="slider-label">Hastighet (rate): 
     <span id="rate-value" class="slider-value">1</span>
   </div>
   <input type="range" id="rate" min="0.5" max="2" step="0.1" value="1" style="width: 100%;" />
 </div>
 
 <div class="slider-container">
-  <div class="slider-label">Высота (pitch): 
-    <span id="pitch-value" class="slider-value">1</span>
+  <div class="slider-label">Tonhöjd (pitch): 
+    <span id="pitch-value" class="slider-value">2</span>
   </div>
-  <input type="range" id="pitch" min="0" max="2" step="0.1" value="1" style="width: 100%;" />
+  <input type="range" id="pitch" min="0" max="2" step="0.1" value="2" style="width: 100%;" />
 </div>
-
-<div id="status">Двойной клик скажет фразу немедленно.</div>
 
 <script>
 const allPhrases = ["I never thought I could feel so completely with someone.", "You made me happier than anyone before.", "My body and soul thank you for every moment.", "You are the reason for my madness and my joy at the same time.", "I don’t want this to ever end.", "With you, I became someone different — more alive and real.", "You opened new worlds inside me.", "My heart has never burned like it does with you.", "I want to repeat this again and again, only with you.", "You made me believe in true passion.", "My body sings from your touch.", "I feel you understand me without words.", "You became part of me — and I’m not afraid of it.", "My heart beats in rhythm with your words.", "I have never been so vulnerable — and it’s beautiful.", "You awakened a fire in me that will never go out.", "I want to be with you in joy and passion.", "You make me better just by being near.", "My body remembers every move you make.", "I want our nights to last forever.", "You gave me the feeling of true closeness.", "My heart beats faster when you’re near.", "I’m grateful to have you in my life.", "You made me braver than I thought I could be.", "I want to get lost in you again and again.", "You are my weakness and my strength at the same time.", "My body longs for you even now.", "I feel you fill me with light and warmth.", "You are my ideal of passion and tenderness.", "I don’t want to let you go even for a second.", "You made me forget everything but you.", "My heart is full of love I want to give to you.", "I want to be yours forever, in every sense of the word.", "You are my fire in the cold night.", "My body and soul are your refuge.", "I want our days to be filled with this feeling.", "You give me wings and hold me tight at the same time.", "My heart dances from your touch.", "I want to look into your eyes and see the whole world there.", "You are the cause of my brightest feelings.", "My body remembers how you caressed me all night.", "I want you always near so I can feel you.", "You made me the woman I always dreamed of being.", "My heart thanks you for every second together.", "I want this passion to never fade.", "You awakened a feeling in me I cannot describe.", "My body craves you like never before.", "I want to be your muse and your inspiration.", "You made me stronger and gentler at the same time.", "My heart belongs to you, and I’m happy to feel it.", "You are the light that brightens my darkest days.", "I want to hold you close and never let go.", "Every moment with you feels like a beautiful dream.", "You complete me in ways I never imagined.", "My soul sings when I’m with you.", "I feel safe and free in your arms.", "You are the sweetest thought in my mind.", "I want to wake up every morning next to you.", "Your love is my greatest treasure.", "I cherish every look, every smile you give me.", "My heart beats only for you.", "I want to explore this endless love with you.", "You make my world more colorful and bright.", "I feel alive when I’m by your side.", "You are my calm in every storm.", "I want to share all my dreams with you.", "Your touch sends shivers down my spine.", "I feel our souls connected like never before.", "You are the sweetest melody in my life.", "I want to hold your hand through every challenge.", "Your smile is my favorite sight.", "I’m lost in your eyes, and I never want to find my way out.", "You are my forever and always.", "My heart races when I hear your voice.", "I want to be your safe place and your adventure.", "You make me believe in miracles.", "I feel a fire burning inside me when you’re near.", "You are the most beautiful part of my story.", "I want to spend endless days wrapped in your love.", "Your presence fills me with peace and excitement.", "I’m thankful for every moment we share.", "You make me want to be the best version of myself.", "I feel our hearts beating as one.", "You are the answer to my unspoken prayers.", "I want to dance with you under the stars.", "Your love is the sweetest addiction I have.", "I feel alive in ways I never knew were possible.", "You are my home and my journey.", "I want to write our love story with every heartbeat.", "Your touch is my favorite kind of magic.", "I’m grateful to walk this path with you.", "You are the spark that lights up my life.", "I want to lose myself in your embrace forever.", "Your voice is the song my heart always wants to hear.", "I feel you understand my soul without words.", "You are my greatest adventure.", "I want to share every sunrise and sunset with you.", "Your love fills the empty spaces inside me.", "I feel complete when I’m with you.", "You are the sweetest dream I never want to wake from.", "I want to hold you close through every season.", "Your smile brightens even my darkest days.", "I feel our love growing stronger every moment.", "You are my heart’s greatest desire.", "I want to explore life’s mysteries hand in hand with you.", "Your touch is the warmth I crave.", "I feel a deep connection that words can’t explain.", "You are the love I’ve always hoped for.", "I want to be the reason for your smiles every day.", "Your laughter is my favorite sound.", "I feel alive and free when you’re near.", "You are my guiding star in the darkest nights.", "I want to share all my secrets with you.", "Your love fills me with endless joy.", "I feel a beautiful calmness in your presence.", "You are the fire that keeps me warm.", "I want to create a lifetime of memories with you.", "Your touch awakens every part of me.", "I feel your love surrounding me like a blanket.", "You are my sweetest escape.", "I want to grow old holding your hand.", "Your smile is my daily sunshine.", "I feel a passion burning bright between us.", "You are my forever love story.", "I want to be the one you always come home to.", "Your eyes hold the depth of oceans.", "I feel safe and cherished with you.", "You are my heart’s true home.", "I want to share all my dreams and fears with you.", "Your love is a beautiful journey I never want to end.", "I feel a deep happiness whenever you’re near.", "You are my sweetest blessing.", "I want to spend every moment wrapped in your arms.", "Your voice calms my restless soul.", "I feel a love so pure it takes my breath away.", "You are my greatest inspiration.", "I want to explore new horizons with you by my side.", "Your touch ignites my deepest desires.", "I feel our hearts beat in perfect harmony.", "You are the missing piece I’ve always sought.", "I want to be your forever confidante.", "Your smile lights up my darkest nights.", "I feel alive in ways I never imagined.", "You are my most beautiful secret.", "I want to cherish every moment we share.", "Your love is my sanctuary.", "I feel a warmth that only you can give.", "You are my heart’s sweetest song.", "I want to spend endless days lost in your eyes.", "Your touch makes my world complete.", "I feel your love flowing through me.", "You are the dream I never want to wake from.", "I want to grow with you through every season.", "Your laughter is my favorite melody.", "I feel a deep peace when I’m with you.", "You are my heart’s eternal flame.", "I want to be your partner in every adventure.", "Your smile brightens my every day.", "I feel a love that transcends time and space.", "You are my greatest joy.", "I want to be the reason for your happiness.", "Your touch fills me with light.", "I feel a connection that words can’t capture.", "You are my heart’s perfect rhythm.", "I want to hold you through every challenge life brings.", "Your eyes shine with endless love.", "I feel alive and free when you’re near me.", "You are my sweetest refuge.", "I want to share every secret with you.", "Your love is a beautiful gift I treasure.", "I feel a passion that fills my entire being.", "You are my heart’s deepest desire.", "I want to spend every moment wrapped in your love.", "Your voice is the sweetest sound to my ears.", "I feel our souls intertwined forever.", "You are the reason my heart sings.", "I want to build a future with you, hand in hand.", "Your smile melts my worries away.", "I feel a love that grows stronger every day.", "You are my heart’s truest companion.", "I want to be your strength and your comfort.", "Your touch awakens a world of feelings inside me.", "I feel at home whenever I’m with you.", "You are my sweetest dream come true.", "I want to be the light that guides you always.", "Your love fills me with endless hope.", "I feel a fire that only you can ignite.", "You are my heart’s forever flame.", "I want to cherish you every single day.", "Your laughter brings joy to my soul.", "I feel complete in your presence.", "You are my heart’s endless song.", "I want to be your forever and always.", "Your smile is the sunshine of my life.", "I feel a love so deep it touches my soul.", "You are my greatest blessing.", "I want to hold your hand through all of life’s moments.", "Your touch fills me with peace and passion.", "I feel a connection that nothing can break.", "You are my heart’s home, now and forever."];
@@ -72,8 +71,10 @@ const pitchSlider = document.getElementById('pitch');
 const rateValue = document.getElementById('rate-value');
 const pitchValue = document.getElementById('pitch-value');
 
-const minInterval = 1;
+const minInterval = 11;
 const maxInterval = 111;
+const showRealPhrase = 0;
+const enableDblClick = 1;
 
 function getNextPhrase() {
   if (phrasePool.length === 0) {
@@ -84,7 +85,7 @@ function getNextPhrase() {
 }
 
 function updateCountdownDisplay() {
-  countdownEl.textContent = timeLeft + " сек.";
+  countdownEl.textContent = timeLeft + " sek.";
 }
 
 function speakPhrase(phrase, callback) {
@@ -92,9 +93,10 @@ function speakPhrase(phrase, callback) {
     speechSynthesis.cancel();
   }
   const utterance = new SpeechSynthesisUtterance(phrase);
-  utterance.lang = 'ru-RU';
+  utterance.lang = 'sv-SE';
   utterance.rate = parseFloat(rateSlider.value);
   utterance.pitch = parseFloat(pitchSlider.value);
+  utterance.volume = 1.0;  // max volym
   utterance.onend = callback;
   speechSynthesis.speak(utterance);
 }
@@ -108,7 +110,11 @@ window.addEventListener('click', () => {
 
 function sayPhrase(autoRestart = true) {
   const phrase = getNextPhrase();
-  phraseEl.textContent = phrase;
+  if (showRealPhrase) {
+    phraseEl.textContent = phrase;
+  } else {
+    phraseEl.textContent = '*'.repeat(phrase.length);
+  }
   speakPhrase(phrase, () => {
     if (autoRestart) {
       startCountdown();
@@ -133,10 +139,12 @@ function startCountdown() {
 rateSlider.oninput = () => rateValue.textContent = rateSlider.value;
 pitchSlider.oninput = () => pitchValue.textContent = pitchSlider.value;
 
-window.addEventListener('dblclick', () => {
-  clearInterval(timerId);
-  sayPhrase(true);
-});
+if (enableDblClick) {
+  window.addEventListener('dblclick', () => {
+    clearInterval(timerId);
+    sayPhrase(true);
+  });
+}
 
 startCountdown();
 </script>
